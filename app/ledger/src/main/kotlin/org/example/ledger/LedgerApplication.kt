@@ -1,11 +1,11 @@
-package org.example.sagapatternpractice
+package org.example.ledger
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SagaPatternPracticeApplication
+class LedgerApplication
 
 fun main(args: Array<String>) {
-    runApplication<SagaPatternPracticeApplication>(*args)
+    runApplication<LedgerApplication>(*args)
 }

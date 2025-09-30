@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  account-service:
+    build:
+      context: .
+      dockerfile: app/account/Dockerfile
+    image: saga-account:latest
+    container_name: account-service
+    ports:
+      - "8081:8081"
+    environment:
+      - JAVA_OPTS=-Xms256m -Xmx512m
+
+  ledger-service:
+    build:
+      context: .
+      dockerfile: app/ledger/Dockerfile
+    image: saga-ledger:latest
+    container_name: ledger-service
+    ports:
+      - "8082:8082"
+    environment:
+      - JAVA_OPTS=-Xms256m -Xmx512m
+
+  transfer-service:
+    build:
+      context: .
+      dockerfile: app/transfer/Dockerfile
+    image: saga-transfer:latest
+    container_name: transfer-service
+    ports:
+      - "8080:8080"
+    environment:
+      - JAVA_OPTS=-Xms256m -Xmx512m
+    depends_on:
+      - account-service
+      - ledger-service

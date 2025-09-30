@@ -1,13 +1,12 @@
-package org.example.sagapatternpractice
+package org.example.account
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class SagaPatternPracticeApplicationTests {
-
+class AccountApplicationTests {
     @Test
     fun contextLoads() {
+        // Verifies that the Spring context loads successfully
     }
-
 }
